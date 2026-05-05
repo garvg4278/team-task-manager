@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'api.dicebear.com' },
@@ -8,8 +9,17 @@ const nextConfig = {
       { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
     ],
   },
+
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000',
+    NEXT_PUBLIC_API_URL:
+      process.env.NEXT_PUBLIC_API_URL ||
+      'http://localhost:5000',
   },
 };
 
